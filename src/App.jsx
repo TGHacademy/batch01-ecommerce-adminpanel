@@ -2,16 +2,20 @@ import { useState } from 'react'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState()
 
   return (
    <div className='login'>
-    <h1>Login as admin</h1>
-
-    <form action='POST'>
+    
+    <form>
+      <div className='container'>
+      <h1>Login as admin</h1>
+       <label className='username'>Username</label>
       <input type='text' onChange={(e)=>{setUsername(e.target.value)}} placeholder='Username' />
+      <label className='password'>Password</label>
       <input type='password' onChange={(e)=>{setPassword(e.target.value)}} placeholder='Password'/>
-      <input type='submit' />
+     <button type='submit' >Login</button>
+      </div>
     </form>
 
    </div>
