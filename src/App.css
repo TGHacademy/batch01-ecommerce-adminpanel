@@ -1,17 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
-.login {
 
+.login {
   display: flex;
   justify-content: right;
   align-items: center;
 }
 
 .login img {
-  width: 100vh;
+  width: 955px;
+  height: 673px;
+
 }
 
 .container {
-  padding-left: 197px;
+  padding-left: 120px;
 }
 
 .container img {
@@ -36,12 +38,30 @@ h1 {
   line-height: normal;
   letter-spacing: -0.72px;
 }
-
+.error-msg{
+  font-size: 12px;
+  width: 100%;
+  color: red;
+}
 form {
   width: 100%;
   border: 3px solid white;
 }
+.username{
+  width: 71px;
+height: 21px;
+top: 252px;
+left: 824px;
 
+
+}
+.password{
+  width: 67px;
+height: 21px;
+top: 335px;
+left: 823px;
+
+}
 label {
   color: #616161;
   text-align: center;
@@ -51,6 +71,8 @@ label {
   font-weight: 600;
   line-height: normal;
   letter-spacing: -0.42px;
+  padding:1, 62px;
+
 }
 
 input {
