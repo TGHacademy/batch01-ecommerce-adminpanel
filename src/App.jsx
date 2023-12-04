@@ -7,20 +7,19 @@ function App() {
   const [username, setUsername] = useState('');
   const [usernameError, setUsernameError] = useState('');
   const [password, setPassword] = useState('');
-  const [passwordError, setPasswordError] = useState('');
+  const[message,setMessage]=useState('');
   
-
+  
   const handleUsernameChange=(e)=>{
-    setSuccessMsg('');
     setUsernameError('');
     setUsername(e.target.value);
   }
-  const handlePasswordChange=(e)=>{
-    setSuccessMsg('');
-    setPasswordError('');
+  const handlePasswordChange=(e)=>{ 
+   
     setPassword(e.target.value);
   }
   const handleFormSubmit=(e)=>{
+    const regExp=/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[a-zA-Z0-9]{8,}$/
     e.preventDefault();
 
     if(username!==''){
@@ -29,11 +28,15 @@ function App() {
     else{
       setUsernameError('Username Required');
     }
-    if(password!==''){
-
+    if(password ===''){
+      setMessage("Please enter password");
     }
-    else{
-      setPasswordError('Password Required');
+    else if(regExp.test(password)){
+      setMessage("Password is Valid");
+    }
+    else if(!regExp.test(password)){
+      setMessage("Password is  not Valid");
+      
     }
 
   }
@@ -51,7 +54,7 @@ function App() {
       {usernameError&&<div  className='error-msg'>{usernameError}</div>}
       <label className='password'>Password</label>
       <input type='password' onChange={handlePasswordChange} placeholder='Password'/>
-      {passwordError&&<div  className='error-msg'>{passwordError}</div>}
+     <p className='error-msg'>{message}</p>
      <button type='submit' >Login</button>
       </div>
       
