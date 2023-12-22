@@ -1,12 +1,12 @@
 
 // eslint-disable-next-line no-unused-vars
 import React  from 'react'
-import Login from './Login'
+import Login from './pages/Login'
 import {BrowserRouter as Router,
   Route } 
   from 'react-router-dom'
-import Forgot from './Forgot'
-import Reset from './Reset'
+import Forgot from './pages/Forgot'
+import Reset from './pages/Reset'
 
 
 

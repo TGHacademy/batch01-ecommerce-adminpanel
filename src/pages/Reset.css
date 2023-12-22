@@ -21,10 +21,6 @@
 .container img {
   width: 47px;
   height: 50px;
-  top: 71px;
-  left: 823px;
-  padding: 4.95px, 7.23px, 5px, 6.3px;
-
 }
 
 h1 {
@@ -66,15 +62,6 @@ form {
  
 }
 
-label {
-  color:#0156FF ;
-  font-family: Poppins;
-  font-size: 10px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: normal;
-}
-
 input {
   display: flex;
   width: 365px;
@@ -85,9 +72,6 @@ input {
   border: 1px solid #D2D2D2;
   background: #FFF;
 }
-
-
-
 button {
   display: flex;
   width: 392px;

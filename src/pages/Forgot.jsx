@@ -18,7 +18,7 @@ function Forgot() {
                     <p>We will send a reset link to this email</p>
                     <label className='email'>Email</label>
                     <input type='email' placeholder='Enter Email' />
-                    <Link to="/other">
+                    <Link to="/Reset">
                     <button type='submit' >Send Reset Link</button>
                </Link>
                 </div>

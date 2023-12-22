@@ -1,5 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 
+html{
+  height: 100vh;
+  }
+  
+  body{
+      width: 100%;
+      height: 100vh;
+      background-color: #ffffff;
+      font-family: Poppins;
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      }
 .login {
   height: 100vh;
   width: 100vw;
@@ -37,6 +50,9 @@ h1 {
   font-weight: 600;
   line-height: normal;
   letter-spacing: -0.72px;
+  margin-top: 47px;
+  margin-bottom: 48px;
+  
 }
 
 .error-msg {
@@ -95,7 +111,7 @@ input {
 
 .btn-login{
   display: flex;
-  width: 366px;
+  width: 398px;
   padding: 10px 20px;
   justify-content: center;
   align-items: center;
