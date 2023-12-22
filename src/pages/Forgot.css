@@ -1,0 +1,92 @@
+ @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+ .forgot {
+   height: 100vh;
+   width: 100vw;
+   display: flex;
+   justify-content: right;
+   align-items: center;
+ }
+
+ .forgot img {
+   width: 955px;
+   height: 673px;
+
+ }
+
+ .container {
+   padding-left: 120px;
+ }
+
+ .container img {
+   width: 47px;
+   height: 50px;
+   margin-top: 71px;
+   padding: 2px;
+
+ }
+
+ h1 {
+   width: 195px;
+   height: 36px;
+   color: #000;
+   font-family: Poppins;
+   font-size: 24px;
+   font-weight: 600;
+   letter-spacing: -0.72px;
+   padding: 8px;
+   margin-top: 47px;
+ }
+
+ p {
+   color: #616161;
+   font-family: Poppins;
+   font-size: 14px;
+   font-weight: 400;
+   letter-spacing: -0.42px;
+   margin-top: -19px;
+ }
+
+ form {
+   width: 100%;
+   border: 3px solid white;
+ }
+
+ .email {
+   margin-top: 66px;
+   color: #616161;
+   font-family: Poppins;
+   font-size: 14px;
+   font-weight: 600;
+   letter-spacing: -0.42px;
+ }
+
+
+ input {
+   display: flex;
+   width: 365px;
+   padding: 12px;
+   align-items: center;
+   gap: 10px;
+   border-radius: 4px;
+   border: 1px solid #D2D2D2;
+   background: #FFF;
+   margin-top: 4px;
+ }
+
+
+
+ button {
+   display: flex;
+   width: 392px;
+   padding: 10px 20px;
+   justify-content: center;
+   align-items: center;
+   margin: 100px 0;
+   gap: 10px;
+   border-radius: 4px;
+   background: #0156FF;
+   color: white;
+   border: none;
+   margin: 92px 0;
+ }

@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 
 .login {
+  height: 100vh;
+  width: 100vw;
   display: flex;
   justify-content: right;
   align-items: center;
@@ -19,17 +21,15 @@
 .container img {
   width: 47px;
   height: 50px;
-  top: 71px;
-  left: 823px;
-  padding: 4.95px, 7.23px, 5px, 6.3px;
+  margin-top: 71px;
+  padding: 2px;
 
 }
 
 h1 {
   width: 177px;
   height: 36px;
-  top: 168px;
-  left: 824px;
+  padding: 2px;
   color: #000;
   font-family: Poppins;
   font-size: 24px;
@@ -38,63 +38,68 @@ h1 {
   line-height: normal;
   letter-spacing: -0.72px;
 }
-.error-msg{
+
+.error-msg {
   font-size: 12px;
   width: 100%;
   color: red;
 }
+
 form {
   width: 100%;
   border: 3px solid white;
 }
-.username{
-  width: 71px;
-height: 21px;
-top: 252px;
-left: 824px;
 
-
-}
-.password{
-  width: 67px;
-height: 21px;
-top: 335px;
-left: 823px;
-
-}
-label {
+.username {
   color: #616161;
   text-align: center;
   font-family: Poppins;
   font-size: 14px;
+  font-weight: 600;
+  padding: 7px;
+}
+
+.password {
+  color: #616161;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 7px;
+
+}
+
+Link {
+  color: #0156FF;
+  font-family: Poppins;
+  font-size: 10px;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
-  letter-spacing: -0.42px;
-  padding: 1, 62px;
-
 }
 
 input {
   display: flex;
   width: 365px;
-  padding: 12px;
+  padding: 38px;
   align-items: center;
   gap: 10px;
   border-radius: 4px;
   border: 1px solid #D2D2D2;
   background: #FFF;
+  margin: 6px;
+
 }
 
 
 
-button {
+.btn-login{
   display: flex;
-  width: 392px;
+  width: 366px;
   padding: 10px 20px;
   justify-content: center;
   align-items: center;
-  margin: 52px 0;
+  margin-top: 52px ;
   gap: 10px;
   border-radius: 4px;
   background: #0156FF;

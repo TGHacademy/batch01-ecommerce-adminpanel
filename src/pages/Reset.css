@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+.reset {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+}
+
+.reset img {
+  width: 955px;
+  height: 673px;
+
+}
+
+.container {
+  padding-left: 120px;
+}
+
+.container img {
+  width: 47px;
+  height: 50px;
+  top: 71px;
+  left: 823px;
+  padding: 4.95px, 7.23px, 5px, 6.3px;
+
+}
+
+h1 {
+  width: 177px;
+  height: 36px;
+  top: 168px;
+  left: 824px;
+  color: #000;
+  font-family: Poppins;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: -0.72px;
+}
+
+
+form {
+  width: 100%;
+  border: 3px solid white;
+}
+
+.new {
+  color: #616161;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 1, 62px;
+}
+
+.confirm {
+  color: #616161;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 1, 62px;
+ 
+}
+
+label {
+  color:#0156FF ;
+  font-family: Poppins;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+input {
+  display: flex;
+  width: 365px;
+  padding: 12px;
+  align-items: center;
+  gap: 10px;
+  border-radius: 4px;
+  border: 1px solid #D2D2D2;
+  background: #FFF;
+}
+
+
+
+button {
+  display: flex;
+  width: 392px;
+  padding: 10px 20px;
+  justify-content: center;
+  align-items: center;
+  margin: 52px 0;
+  gap: 10px;
+  border-radius: 4px;
+  background: #0156FF;
+  color: white;
+  border: none;
+}
