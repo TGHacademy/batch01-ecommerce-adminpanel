@@ -1,8 +1,7 @@
 import { useState } from 'react'
-import './Login.css'
 import logo from "/src/assets/Logo.svg"
 import bgimage from "/src/assets/Frame 160.svg"
-import toast, { Toaster } from 'react-hot-toast';
+import toast from 'react-hot-toast';
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 
 
@@ -61,23 +60,23 @@ function Login() {
     };
     return (
         <div className='login'>
-            <img src={bgimage} />
+            <img  className='shop-img'src={bgimage} />
             <form onSubmit={handleFormSubmit}>
                 <div className='container'>
-                    <img src={logo} />
-                    <h1>Login as admin</h1>
+                    <img  className='logo-img'src={logo} />
+                    <h1 className='login-h1'>Login as admin</h1>
                     <label className='username'>Username</label>
-                    <input type='email'  onChange={handleUsernameChange} placeholder='Username' />
+                    <input type='email'  className='input-username' onChange={handleUsernameChange} placeholder='Username' />
                     {usernameError && <div className='error-msg'>{usernameError}</div>}
                     <label className='password'>Password</label>
-                    <input type='password' onChange={handlePasswordChange} placeholder='Password' />
+                    <input type='password'  className='input-password'onChange={handlePasswordChange} placeholder='Password' />
                     {passwordError && <div className='error-msg'>{passwordError}</div>}
-                    <Link to='/Forgot'>Forgot password</Link>
+                    <Link to='/Forgot' className='link-forgot'>Forgot password</Link>
                     <button onClick={handleLogin} type='submit'  className='btn-login'>Login</button>
                 </div>
             </form>
 
-            <Toaster />
+          
         </div>
     )
 }
