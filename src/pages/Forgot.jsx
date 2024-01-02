@@ -10,7 +10,7 @@ function Forgot() {
 
   const handleForgotPassword = async () => {
     try {
-      const response = await fetch('', {
+      const response = await fetch('https://academy-batch-1-project-683989f58497.herokuapp.com/api/auth/forgot-password', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

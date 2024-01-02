@@ -62,7 +62,7 @@ function Add_product() {
       formData.append('price', product.price);
   
       
-      const response = await fetch('', {
+      const response = await fetch('https://academy-batch-1-project-683989f58497.herokuapp.com/api/admin/products', {
         method: 'POST',
         body: formData,
       });
