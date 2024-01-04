@@ -71,7 +71,7 @@ function Login() {
                     <label className='password'>Password</label>
                     <input type='password'  className='input-password'onChange={handlePasswordChange} placeholder='Password' />
                     {passwordError && <div className='error-msg'>{passwordError}</div>}
-                    <Link to='/Forgot' className='link-forgot'>Forgot password</Link>
+                    <Link to='/forgot' className='link-forgot'>Forgot password</Link>
                     <button onClick={handleLogin} type='submit'  className='btn-login'>Login</button>
                 </div>
             </form>

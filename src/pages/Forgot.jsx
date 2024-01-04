@@ -1,12 +1,12 @@
 import { useState} from 'react'
 import logo from "/src/assets/Logo.svg"
 import bgimage from "/src/assets/Frame 160.svg"
-import { Link } from 'react-router-dom/cjs/react-router-dom.min'
+import { Link,useHistory } from 'react-router-dom/cjs/react-router-dom.min'
 
 function Forgot() {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
-
+  const history = useHistory();
 
   const handleForgotPassword = async () => {
     try {
@@ -21,6 +21,8 @@ function Forgot() {
       if (response.ok) {
         const data = await response.json();
         setMessage(data.message);
+        const resetLink = data.resetLink;
+        history.push(`/reset-password?token=${encodeURIComponent(resetLink)}`);
       } else {
         const errorData = await response.json();
         setMessage(`Error: ${errorData.message}`);
@@ -43,9 +45,13 @@ function Forgot() {
                     <p className='forgot-p'>We will send a reset link to this email</p>
                     <label className='email'>Email</label>
                     <input  className='input-email'type='email' placeholder='Enter Email' onChange={(e) => setEmail(e.target.value)}/>
-                    <Link to="/Reset">
-                    <button type='submit'onClick={handleForgotPassword}  className='btn-forgot'>Send Reset Link</button>
-               </Link>
+                   
+                    <Link to="/reset-password">
+            <button type='button' onClick={handleForgotPassword} className='btn-forgot'>
+              Send Reset Link
+            </button>
+          </Link>
+               
                {message && <p>{message}</p>}
                 </div>
 

@@ -17,7 +17,7 @@ function Reset() {
       }
   
       
-      const apiEndpoint = 'http://academy-batch-1-project-683989f58497.herokuapp.com/api/auth/reset-password/99b5de004e340cdc6d98b9423b7846c0e87c091db2b1629817bed0e07e01b108';
+      const apiEndpoint = '';
   
       try {
         

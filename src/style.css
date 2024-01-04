@@ -110,8 +110,6 @@ form {
 
 }
 
-
-
 .btn-login {
   display: flex;
   width: 398px;
@@ -422,11 +420,13 @@ form {
   border: 1px solid #D2D2D2;
   background: #FFF;
 }
-.add-product-error{
+
+.add-product-error {
   font-size: 12px;
   width: 100%;
   color: red;
 }
+
 .btns {
   display: flex;
   justify-content: flex-end;
@@ -434,8 +434,6 @@ form {
   gap: 10px;
   padding-top: 88px;
   padding-left: 190px;
-
-
 }
 
 .btn-cancel {
@@ -461,15 +459,17 @@ form {
   color: #fff;
   border: none;
 }
-.product-list-page{
+
+.product-list-page {
   width: 100vw;
   height: 100vh;
   background: #F1F1F1;
 }
+
 .navbar {
   display: flex;
   padding: 11px 54px;
-  justify-content: space-between;
+  gap: 400px;
   align-items: center;
   background-color: white;
 }
@@ -484,7 +484,7 @@ form {
   display: flex;
   align-items: flex-start;
   flex: 1;
-  justify-content: space-around;
+
   gap: 40px;
 }
 
@@ -551,13 +551,16 @@ form {
   line-height: normal;
   letter-spacing: -0.72px;
 }
-.search-part{
+
+
+.search-part {
   display: flex;
   padding: 11px 54px;
-  /* justify-content: space-between; */
+  justify-content: space-between;
   align-items: center;
 }
- .search-bar {
+
+.search-bar {
   display: flex;
   width: 365px;
   padding: 8px 10px;
@@ -573,19 +576,23 @@ form {
   font-weight: 400;
   line-height: normal;
   letter-spacing: -0.42px;
-} 
- .search-container {
+}
+
+.search-container {
   position: relative;
   padding-left: 20px;
+
 }
+
 .search-icon {
   position: absolute;
   top: 50%;
   right: 10px;
   transform: translateY(-50%);
-  color: #616161; 
+  color: #616161;
   cursor: pointer;
 }
+
 .btn-add-product {
   display: inline-flex;
   padding: 10px 20px;
@@ -603,4 +610,31 @@ form {
   font-weight: 600;
   line-height: normal;
   letter-spacing: -0.48px;
+}
+
+.product-listing-part {
+  margin-left: 50px;
+  width: 92vw;
+  height: 756px;
+  display: inline-flex;
+  padding: 0px 3px 15px 1px;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 5px;
+  border-radius: 12px;
+  border: 1px solid #E1E1E1;
+  background: #FFF;
+}
+
+.properties {
+  display: flex;
+  padding: 15px 45px;
+  align-items: flex-start;
+  gap: 120px;
+  color: #5E5E5E;
+  font-family: Poppins;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
 }

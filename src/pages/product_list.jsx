@@ -40,6 +40,15 @@ function product_list() {
 
     <button className='btn-add-product'>Add Product+ </button>
     </div>
+    <div className='product-listing-part'>
+      <div className='properties'>
+     <h6>Image</h6>
+     <h6>Product Name</h6>
+     <h6>Price</h6>
+     <h6>Quantity</h6>
+     <h6>Date added</h6>
+     </div>
+    </div>
     </div>
   )
 }
