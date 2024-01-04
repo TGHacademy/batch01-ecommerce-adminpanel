@@ -13,7 +13,7 @@ function Add_product() {
     quantity: '',
     price: '',
   });
-
+  const [error, setError] = useState({ quantity: '', price: '' });
   const onDrop = useCallback(acceptedFiles => {
     if(acceptedFiles.length>1)
     {
@@ -32,26 +32,47 @@ function Add_product() {
       product_name: value,
     });
   };
+  const handlequantityChange = (event) => {
+    const value = event.target.value;
 
-  const handlequantityChange = (e) => {
-    const {  value } = e.target;
-    console.log('quantity',value);
-    
-    setProduct({
-      ...product,
-      quantity: value,
-    });
+    // Check if the input is a number
+    if (!isNaN(value) || value === '') {
+      setProduct({ ...product, quantity: value });
+      setError({ ...error, quantity: '' });
+    } else {
+      setError({ ...error, quantity: 'Please enter a valid number' });
+    }
   };
-  const handlepriceChange = (e) => {
-    const {  value } = e.target;
-    console.log('price',value);
+  // const handlequantityChange = (e) => {
+  //   const {  value } = e.target;
+  //   console.log('quantity',value);
     
-    setProduct({
-      ...product,
-      price: value,
-    });
+  //   setProduct({
+  //     ...product,
+  //     quantity: value,
+  //   });
+  // };
+  // const handlepriceChange = (e) => {
+  //   const {  value } = e.target;
+  //   console.log('price',value);
+    
+  //   setProduct({
+  //     ...product,
+  //     price: value,
+  //   });
+  // };
+  const handlepriceChange = (event) => {
+    const value = event.target.value;
+
+    // Check if the input is a number
+    if (!isNaN(value) || value === '') {
+      setProduct({ ...product, price: value });
+      setError({ ...error, price: '' });
+    } else {
+      setError({ ...error, price: 'Please enter a valid number' });
+    }
   };
-  
+
   const handleAddProduct = async () => {
     try {
       
@@ -137,6 +158,7 @@ function Add_product() {
           value={product.quantity}
           onChange={handlequantityChange}
         />
+         {error.quantity && <span className="add-product-error">{error.quantity}</span>}
       </div>
       <div>
         <label  className='addproduct-label'>Price:</label>
@@ -147,6 +169,7 @@ function Add_product() {
           value={product.price}
           onChange={handlepriceChange}
         />
+         {error.quantity && <span className="add-product-error">{error.price}</span>}
       </div>
       <div className='btns'>
         <button onClick={handleCancel} className='btn-cancel'>Cancel</button>
