@@ -6,13 +6,13 @@ import { IoSearch } from "react-icons/io5";
 
 function product_list() {
   const products = [
-    { id: 1, image: 'path/to/image1.jpg',name: 'MSI CREATOR 17 A10SFS-240AU 17 UHD 4K HDR Thin Bezel Intel 10th Gen i7 10875H - RTX 2070 SUPER MAX Q - 16GB RAM - 1TB SSD NVME - Windows 10 PRO Laptop',
-     price: '₹ 8200', quantity: '500', dateAdded: '22 Sep, 2023' },{ id: 2, image: 'path/to/image1.jpg',name: 'MSI CREATOR 17 A10SFS-240AU 17 UHD 4K HDR Thin Bezel Intel 10th Gen i7 10875H - RTX 2070 SUPER MAX Q - 16GB RAM - 1TB SSD NVME - Windows 10 PRO Laptop',
-     price: '₹ 8200', quantity: '500', dateAdded: '22 Sep, 2023' },{ id: 3, image: 'path/to/image1.jpg',name: 'MSI CREATOR 17 A10SFS-240AU 17 UHD 4K HDR Thin Bezel Intel 10th Gen i7 10875H - RTX 2070 SUPER MAX Q - 16GB RAM - 1TB SSD NVME - Windows 10 PRO Laptop',
-     price: '₹ 8200', quantity: '500', dateAdded: '22 Sep, 2023' },{ id: 4, image: 'path/to/image1.jpg',name: 'MSI CREATOR 17 A10SFS-240AU 17 UHD 4K HDR Thin Bezel Intel 10th Gen i7 10875H - RTX 2070 SUPER MAX Q - 16GB RAM - 1TB SSD NVME - Windows 10 PRO Laptop',
-     price: '₹ 8200', quantity: '500', dateAdded: '22 Sep, 2023' },{ id: 5, image: 'path/to/image1.jpg',name: 'MSI CREATOR 17 A10SFS-240AU 17 UHD 4K HDR Thin Bezel Intel 10th Gen i7 10875H - RTX 2070 SUPER MAX Q - 16GB RAM - 1TB SSD NVME - Windows 10 PRO Laptop',
-     price: '₹ 8200', quantity: '500', dateAdded: '22 Sep, 2023' },{ id: 6, image: 'path/to/image1.jpg',name: 'MSI CREATOR 17 A10SFS-240AU 17 UHD 4K HDR Thin Bezel Intel 10th Gen i7 10875H - RTX 2070 SUPER MAX Q - 16GB RAM - 1TB SSD NVME - Windows 10 PRO Laptop',
-     price: '₹ 8200', quantity: '500', dateAdded: '22 Sep, 2023' },{ id: 7, image: 'path/to/image1.jpg',name: 'MSI CREATOR 17 A10SFS-240AU 17 UHD 4K HDR Thin Bezel Intel 10th Gen i7 10875H - RTX 2070 SUPER MAX Q - 16GB RAM - 1TB SSD NVME - Windows 10 PRO Laptop',
+    { id: 1, image: 'src/assets/image 54.jpg',name: 'MSI CREATOR 17 A10SFS-240AU 17 UHD 4K HDR Thin Bezel Intel 10th Gen i7 10875H - RTX 2070 SUPER MAX Q - 16GB RAM - 1TB SSD NVME - Windows 10 PRO Laptop',
+     price: '₹ 8200', quantity: '500', dateAdded: '22 Sep, 2023' },{ id: 2, image: 'src/assets/image 54.jpg',name: 'MSI CREATOR 17 A10SFS-240AU 17 UHD 4K HDR Thin Bezel Intel 10th Gen i7 10875H - RTX 2070 SUPER MAX Q - 16GB RAM - 1TB SSD NVME - Windows 10 PRO Laptop',
+     price: '₹ 8200', quantity: '500', dateAdded: '22 Sep, 2023' },{ id: 3, image: 'src/assets/image 54.jpg',name: 'MSI CREATOR 17 A10SFS-240AU 17 UHD 4K HDR Thin Bezel Intel 10th Gen i7 10875H - RTX 2070 SUPER MAX Q - 16GB RAM - 1TB SSD NVME - Windows 10 PRO Laptop',
+     price: '₹ 8200', quantity: '500', dateAdded: '22 Sep, 2023' },{ id: 4, image: 'src/assets/image 54.jpg',name: 'MSI CREATOR 17 A10SFS-240AU 17 UHD 4K HDR Thin Bezel Intel 10th Gen i7 10875H - RTX 2070 SUPER MAX Q - 16GB RAM - 1TB SSD NVME - Windows 10 PRO Laptop',
+     price: '₹ 8200', quantity: '500', dateAdded: '22 Sep, 2023' },{ id: 5, image: 'src/assets/image 54.jpg',name: 'MSI CREATOR 17 A10SFS-240AU 17 UHD 4K HDR Thin Bezel Intel 10th Gen i7 10875H - RTX 2070 SUPER MAX Q - 16GB RAM - 1TB SSD NVME - Windows 10 PRO Laptop',
+     price: '₹ 8200', quantity: '500', dateAdded: '22 Sep, 2023' },{ id: 6, image: 'src/assets/image 54.jpg',name: 'MSI CREATOR 17 A10SFS-240AU 17 UHD 4K HDR Thin Bezel Intel 10th Gen i7 10875H - RTX 2070 SUPER MAX Q - 16GB RAM - 1TB SSD NVME - Windows 10 PRO Laptop',
+     price: '₹ 8200', quantity: '500', dateAdded: '22 Sep, 2023' },{ id: 7, image: 'src/assets/image 54.jpg',name: 'MSI CREATOR 17 A10SFS-240AU 17 UHD 4K HDR Thin Bezel Intel 10th Gen i7 10875H - RTX 2070 SUPER MAX Q - 16GB RAM - 1TB SSD NVME - Windows 10 PRO Laptop',
      price: '₹ 8200', quantity: '500', dateAdded: '22 Sep, 2023' }
     
   ];

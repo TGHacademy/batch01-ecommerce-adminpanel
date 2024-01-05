@@ -627,11 +627,13 @@ form {
 }
 
 .properties {
+  width: 221.5px;
   display: flex;
   width: 92.5vw;
+  height: 77px;
   padding-left: 38px;
   align-items: flex-start;
-  gap: 156px;
+  gap:147px;
   color: #5E5E5E;
   font-family: Poppins;
   font-size: 24px;
@@ -640,7 +642,7 @@ form {
   line-height: normal;
   border-bottom: 1px solid #E1E1E1;
 }
-.product-listing-part {
+ .product-listing-part {
   display: flex;
   flex-direction: column;
 }
@@ -650,8 +652,8 @@ form {
   align-items: center;
   width: 90vw;
   border-bottom: 1px solid #ccc;
-  gap: 156px;
-  padding-left: 38px;
+  gap: 76px;
+  padding-left: 20px;
 
 }
 
@@ -663,6 +665,8 @@ form {
 .product-name {
   width: 221.5px;
   height: 80px;
+  padding-left: 63px;
+  padding-right: 20px;
   color: #171717;
   font-family: Manrope;
   font-size: 12px;
@@ -671,7 +675,8 @@ form {
   line-height: normal;
 }
 
-.price{
+/*.price{
+  width: 150px;
   color: #171717;
   font-family: Manrope;
   font-size: 14px;
@@ -680,6 +685,7 @@ form {
   line-height: normal;
 }
 .quantity {
+  width:150px;
   color: #171717;
   font-family: Manrope;
   font-size: 14px;
@@ -689,10 +695,43 @@ form {
 }
 
 .date {
+  width: 200px;
   color: #171717;
   font-family: Manrope;
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+} */
+
+
+
+.price {
+width: 150px;
+color: #171717;
+font-family: Manrope;
+font-size: 14px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+}
+
+.quantity {
+width: 150px;
+color: #171717;
+font-family: Manrope;
+font-size: 14px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+}
+
+.date {
+width: 200px;
+color: #171717;
+font-family: Manrope;
+font-size: 12px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
 }
