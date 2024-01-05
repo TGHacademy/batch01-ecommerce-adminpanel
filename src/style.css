@@ -615,7 +615,7 @@ form {
 .product-listing-part {
   margin-left: 50px;
   width: 92vw;
-  height: 756px;
+  height: 100vh;
   display: inline-flex;
   padding: 0px 3px 15px 1px;
   flex-direction: row;
@@ -628,13 +628,71 @@ form {
 
 .properties {
   display: flex;
-  padding: 15px 45px;
+  width: 92.5vw;
+  padding-left: 38px;
   align-items: flex-start;
-  gap: 120px;
+  gap: 156px;
   color: #5E5E5E;
   font-family: Poppins;
   font-size: 24px;
   font-style: normal;
   font-weight: 800;
+  line-height: normal;
+  border-bottom: 1px solid #E1E1E1;
+}
+.product-listing-part {
+  display: flex;
+  flex-direction: column;
+}
+
+.product {
+  display: flex;
+  align-items: center;
+  width: 90vw;
+  border-bottom: 1px solid #ccc;
+  gap: 156px;
+  padding-left: 38px;
+
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+}
+
+.product-name {
+  width: 221.5px;
+  height: 80px;
+  color: #171717;
+  font-family: Manrope;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.price{
+  color: #171717;
+  font-family: Manrope;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.quantity {
+  color: #171717;
+  font-family: Manrope;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.date {
+  color: #171717;
+  font-family: Manrope;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
   line-height: normal;
 }

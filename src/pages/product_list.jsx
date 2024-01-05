@@ -1,10 +1,22 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react'
 import { FaRegBell } from "react-icons/fa";
+import { LuPencil,LuTrash } from "react-icons/lu";
 import { IoSearch } from "react-icons/io5";
 
 function product_list() {
-  
+  const products = [
+    { id: 1, image: 'path/to/image1.jpg',name: 'MSI CREATOR 17 A10SFS-240AU 17 UHD 4K HDR Thin Bezel Intel 10th Gen i7 10875H - RTX 2070 SUPER MAX Q - 16GB RAM - 1TB SSD NVME - Windows 10 PRO Laptop',
+     price: '₹ 8200', quantity: '500', dateAdded: '22 Sep, 2023' },{ id: 2, image: 'path/to/image1.jpg',name: 'MSI CREATOR 17 A10SFS-240AU 17 UHD 4K HDR Thin Bezel Intel 10th Gen i7 10875H - RTX 2070 SUPER MAX Q - 16GB RAM - 1TB SSD NVME - Windows 10 PRO Laptop',
+     price: '₹ 8200', quantity: '500', dateAdded: '22 Sep, 2023' },{ id: 3, image: 'path/to/image1.jpg',name: 'MSI CREATOR 17 A10SFS-240AU 17 UHD 4K HDR Thin Bezel Intel 10th Gen i7 10875H - RTX 2070 SUPER MAX Q - 16GB RAM - 1TB SSD NVME - Windows 10 PRO Laptop',
+     price: '₹ 8200', quantity: '500', dateAdded: '22 Sep, 2023' },{ id: 4, image: 'path/to/image1.jpg',name: 'MSI CREATOR 17 A10SFS-240AU 17 UHD 4K HDR Thin Bezel Intel 10th Gen i7 10875H - RTX 2070 SUPER MAX Q - 16GB RAM - 1TB SSD NVME - Windows 10 PRO Laptop',
+     price: '₹ 8200', quantity: '500', dateAdded: '22 Sep, 2023' },{ id: 5, image: 'path/to/image1.jpg',name: 'MSI CREATOR 17 A10SFS-240AU 17 UHD 4K HDR Thin Bezel Intel 10th Gen i7 10875H - RTX 2070 SUPER MAX Q - 16GB RAM - 1TB SSD NVME - Windows 10 PRO Laptop',
+     price: '₹ 8200', quantity: '500', dateAdded: '22 Sep, 2023' },{ id: 6, image: 'path/to/image1.jpg',name: 'MSI CREATOR 17 A10SFS-240AU 17 UHD 4K HDR Thin Bezel Intel 10th Gen i7 10875H - RTX 2070 SUPER MAX Q - 16GB RAM - 1TB SSD NVME - Windows 10 PRO Laptop',
+     price: '₹ 8200', quantity: '500', dateAdded: '22 Sep, 2023' },{ id: 7, image: 'path/to/image1.jpg',name: 'MSI CREATOR 17 A10SFS-240AU 17 UHD 4K HDR Thin Bezel Intel 10th Gen i7 10875H - RTX 2070 SUPER MAX Q - 16GB RAM - 1TB SSD NVME - Windows 10 PRO Laptop',
+     price: '₹ 8200', quantity: '500', dateAdded: '22 Sep, 2023' }
+    
+  ];
+
   return (
     <div className='product-list-page'>
       <div className="navbar">
@@ -47,7 +59,25 @@ function product_list() {
      <h6>Price</h6>
      <h6>Quantity</h6>
      <h6>Date added</h6>
+     <h6> </h6>
      </div>
+     {products.map((product) => (
+          <div key={product.id} className='product'>
+            {/* Display product information */}
+            {/* Add your product image, name, price, quantity, and date added as needed */}
+            <img src={product.image}  className='product-image' />
+            <p className='product-name'>{product.name}</p>
+            <p className='price'>{product.price}</p>
+            <p className='quantity'>{product.quantity}</p>
+            <p className='date'>{product.dateAdded}</p>
+            
+            {/* Actions (Edit and Delete icons) */}
+            <div className='actions'>
+              <LuPencil className='edit-icon' />
+              <LuTrash className='delete-icon' />
+            </div>
+          </div>
+        ))}
     </div>
     </div>
   )
