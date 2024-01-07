@@ -1,12 +1,13 @@
 import { } from 'react'
 import { useState } from 'react';
 import logo from "/src/assets/Logo.svg"
+import { useSearchParams } from 'react-router-dom';
 import bgimage from "/src/assets/Frame 160.svg"
 
 function Reset() {
     const [newPassword, setNewPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
-  
+    const [searchParams] = useSearchParams();
     const handleFormSubmit = async (e) => {
       e.preventDefault();
   
@@ -17,9 +18,14 @@ function Reset() {
       }
   
       
-      const apiEndpoint = '';
+      const apiEndpoint = 'http://localhost:3000/reset-password?token=3d5aac5610fffdc68dca041dd4a61198e30cd39947e73e8eb68bd77ff255769c';
   
       try {
+        const token = searchParams.get('token'); 
+        if (!token) {
+          alert('Token missing. Please use a valid reset link.');
+          return;
+        }
         
         const response = await fetch(apiEndpoint, {
           method: 'POST',
