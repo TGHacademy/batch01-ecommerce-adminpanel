@@ -7,7 +7,8 @@ import bgimage from "/src/assets/Frame 160.svg"
 function Reset() {
     const [newPassword, setNewPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
-    const [searchParams] = useSearchParams();
+    const searchParams = useSearchParams();
+
     const handleFormSubmit = async (e) => {
       e.preventDefault();
   
@@ -18,13 +19,14 @@ function Reset() {
       }
   
       
-      const apiEndpoint = 'http://localhost:3000/reset-password?token=3d5aac5610fffdc68dca041dd4a61198e30cd39947e73e8eb68bd77ff255769c';
+      const apiEndpoint = 'https://academy-batch-1-project-683989f58497.herokuapp.com/api/auth/reset-password?token=105d3c36e6c50f528ec8473d2a7c93eb8686dbff123094c8da3eed5d26d5c281';
   
       try {
-        const token = searchParams.get('token'); 
-        if (!token) {
-          alert('Token missing. Please use a valid reset link.');
-          return;
+         const token = searchParams.get('token'); 
+         console.log('Token from URL:', token); 
+         if (!token) {
+         alert('Token missing. Please use a valid reset link.');
+        return;
         }
         
         const response = await fetch(apiEndpoint, {
@@ -35,6 +37,7 @@ function Reset() {
           body: JSON.stringify({
             newPassword,
             confirmPassword,
+            token,
           }),
         });
   

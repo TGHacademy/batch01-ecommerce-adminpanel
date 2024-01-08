@@ -468,7 +468,7 @@ form {
 
 .navbar {
   display: flex;
-  padding: 11px 54px;
+  padding: 0px 54px;
   gap: 400px;
   align-items: center;
   background-color: white;
@@ -515,13 +515,15 @@ form {
 }
 
 .badge {
-  width: 24px;
-  height: 24px;
-  background-color: #0156FF;
+  width: 10px;
+  height: 10px;
+  text-align: center;  background-color: #0156FF;
   color: white;
   border: 1px solid white;
   padding: 5px;
   border-radius: 50%;
+  font-size: 12px;
+
 }
 
 
@@ -555,7 +557,7 @@ form {
 
 .search-part {
   display: flex;
-  padding: 11px 54px;
+  padding: 0px 54px;
   justify-content: space-between;
   align-items: center;
 }
@@ -629,9 +631,9 @@ form {
 .properties {
   display: flex;
   width: 92.5vw;
-  height: 77px;
+  height: 55px;
   padding-left: 38px;
-  align-items: flex-start;
+  align-items: center;
   gap:160px;
   color: #5E5E5E;
   font-family: Poppins;

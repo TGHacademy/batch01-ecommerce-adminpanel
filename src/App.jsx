@@ -15,7 +15,6 @@ import product_list from './pages/product_list'
 
 
 
-
 function App() {
   
   return (

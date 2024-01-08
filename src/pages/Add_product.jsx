@@ -35,7 +35,7 @@ function Add_product() {
   const handlequantityChange = (event) => {
     const value = event.target.value;
 
-    // Check if the input is a number
+   
     if (!isNaN(value) || value === '') {
       setProduct({ ...product, quantity: value });
       setError({ ...error, quantity: '' });
@@ -43,28 +43,11 @@ function Add_product() {
       setError({ ...error, quantity: 'Please enter a valid number' });
     }
   };
-  // const handlequantityChange = (e) => {
-  //   const {  value } = e.target;
-  //   console.log('quantity',value);
-    
-  //   setProduct({
-  //     ...product,
-  //     quantity: value,
-  //   });
-  // };
-  // const handlepriceChange = (e) => {
-  //   const {  value } = e.target;
-  //   console.log('price',value);
-    
-  //   setProduct({
-  //     ...product,
-  //     price: value,
-  //   });
-  // };
+ 
   const handlepriceChange = (event) => {
     const value = event.target.value;
 
-    // Check if the input is a number
+   
     if (!isNaN(value) || value === '') {
       setProduct({ ...product, price: value });
       setError({ ...error, price: '' });
