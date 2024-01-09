@@ -25,7 +25,11 @@ function App() {
          <Route exact path='/reset-password' component={Reset}/>
          <Route exact path='/add-product' component={Add_product}/>
          <Route exact path='/product-list' component={product_list}/>
+         <Route path="/reset-password?token=" exact>
+  <Reset />
+</Route>
       </Router>
+     
       <Toaster />
     </div>
   )

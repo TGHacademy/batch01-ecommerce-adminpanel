@@ -1,14 +1,15 @@
 import { } from 'react'
 import { useState } from 'react';
 import logo from "/src/assets/Logo.svg"
-import { useParams } from 'react-router-dom';
+
 import bgimage from "/src/assets/Frame 160.svg"
 
 function Reset() {
     const [newPassword, setNewPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
-    const  { token } = useParams();
-   
+    const urlSearchParams = new URLSearchParams(window.location.search);
+    const token = urlSearchParams.get('token');
+
      
    
     const handleFormSubmit = async (e) => {
@@ -28,7 +29,6 @@ function Reset() {
             alert('Token missing. Please use a valid reset link.');
             return;
         }
-        
         const response = await fetch(apiEndpoint, {
           method: 'POST',
           headers: {
