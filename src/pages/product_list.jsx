@@ -79,6 +79,15 @@ function product_list() {
           </div>
         ))}
     </div>
+    <div className="scroll-buttons">
+  <div className="circle-button">&#60;</div> {/* Less than symbol for going back */}
+  {[1, 2, 3, "...", 15].map((item, index) => (
+    <div key={index} className="circle-button">
+      {item}
+    </div>
+  ))}
+  <div className="circle-button">&#62;</div> {/* Greater than symbol for going forward */}
+</div>
     </div>
   )
 }

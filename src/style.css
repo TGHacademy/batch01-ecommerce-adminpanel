@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 
-html {
+/* html {
   height: 100vh;
 }
 
@@ -12,7 +12,7 @@ body {
   position: fixed;
   top: 0;
   bottom: 0;
-}
+} */
 
 .login {
   height: 100vh;
@@ -461,8 +461,6 @@ form {
 }
 
 .product-list-page {
-  width: 100vw;
-  height: 100vh;
   background: #F1F1F1;
 }
 
@@ -517,7 +515,8 @@ form {
 .badge {
   width: 10px;
   height: 10px;
-  text-align: center;  background-color: #0156FF;
+  text-align: center;
+  background-color: #0156FF;
   color: white;
   border: 1px solid white;
   padding: 5px;
@@ -615,26 +614,26 @@ form {
 }
 
 .product-listing-part {
-  margin-left: 50px;
-  width: 92vw;
-  height: 100vh;
+  width: 1163px;
+  height: 756px;
   display: inline-flex;
   padding: 0px 3px 15px 1px;
-  flex-direction: row;
+  flex-direction: column;
   align-items: flex-start;
   gap: 5px;
   border-radius: 12px;
   border: 1px solid #E1E1E1;
   background: #FFF;
+  margin-left: 60px;
+  margin-right: 60px;
 }
 
 .properties {
-  display: flex;
-  width: 92.5vw;
   height: 55px;
+  display: flex;
   padding-left: 38px;
   align-items: center;
-  gap:160px;
+  gap: 150px;
   color: #5E5E5E;
   font-family: Poppins;
   font-size: 24px;
@@ -643,19 +642,14 @@ form {
   line-height: normal;
   border-bottom: 1px solid #E1E1E1;
 }
- .product-listing-part {
-  display: flex;
-  flex-direction: column;
-}
 
 .product {
   display: flex;
   align-items: center;
   width: 90vw;
   border-bottom: 1px solid #ccc;
-  gap: 76px;
+  gap: 60px;
   padding-left: 20px;
-
 }
 
 .actions {
@@ -675,32 +669,58 @@ form {
   font-weight: 400;
   line-height: normal;
 }
+
 .price {
-width: 150px;
-color: #171717;
-font-family: Manrope;
-font-size: 14px;
-font-style: normal;
-font-weight: 700;
-line-height: normal;
+  width: 150px;
+  color: #171717;
+  font-family: Manrope;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
 }
 
 .quantity {
-width: 150px;
-color: #171717;
-font-family: Manrope;
-font-size: 14px;
-font-style: normal;
-font-weight: 700;
-line-height: normal;
+  width: 150px;
+  color: #171717;
+  font-family: Manrope;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
 }
 
 .date {
-width: 200px;
-color: #171717;
-font-family: Manrope;
-font-size: 12px;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
+  width: 200px;
+  color: #171717;
+  font-family: Manrope;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.scroll-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  gap: 10px;
+}
+
+.circle-button {
+
+  display: inline-flex;
+  color: #A2A6B0;
+  font-weight: 700;
+  padding: 8px 16px;
+  align-items: center;
+  border-radius: 50px;
+  border: 2px solid #A2A6B0;
+}
+
+.circle-button:hover {
+color:#000;
+background: #F5F7FF;
+ 
 }
