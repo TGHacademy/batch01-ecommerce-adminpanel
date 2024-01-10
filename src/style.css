@@ -580,8 +580,17 @@ form {
 }
 
 .search-container {
-  position: relative;
-  padding-left: 20px;
+  /* position: relative;
+  padding-left: 20px; */
+ 
+height:37px;
+top: 92px;
+left: 178px;
+display: flex;
+width: 365px;
+padding: 8px 10px;
+justify-content: space-between;
+align-items: center;
 
 }
 
@@ -633,7 +642,7 @@ form {
   display: flex;
   padding-left: 38px;
   align-items: center;
-  gap: 150px;
+  gap: 120px;
   color: #5E5E5E;
   font-family: Poppins;
   font-size: 24px;
@@ -645,11 +654,13 @@ form {
 
 .product {
   display: flex;
+  /* width: 1159px; */
+  height: 76px;
+  padding: 8px 20px;
   align-items: center;
-  width: 90vw;
+  gap: 25px;
   border-bottom: 1px solid #ccc;
-  gap: 60px;
-  padding-left: 20px;
+  width: 100%;
 }
 
 .actions {
@@ -720,7 +731,7 @@ form {
 }
 
 .circle-button:hover {
-color:#000;
-background: #F5F7FF;
- 
+  color: #000;
+  background: #F5F7FF;
+
 }

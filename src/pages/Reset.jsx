@@ -1,7 +1,6 @@
 import { } from 'react'
 import { useState } from 'react';
 import logo from "/src/assets/Logo.svg"
-
 import bgimage from "/src/assets/Frame 160.svg"
 
 function Reset() {
@@ -41,7 +40,7 @@ function Reset() {
         });
   
         if (response.ok) {
-        
+    
           alert('Password reset successful!');
         } else {
          

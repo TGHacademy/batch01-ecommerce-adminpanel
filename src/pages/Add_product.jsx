@@ -18,14 +18,24 @@ function Add_product() {
     if(acceptedFiles.length>1)
     {
       toast.error('cannot add more than one file')
+    }else {
+      const selectedFile = acceptedFiles[0];
+      console.log('Selected File:', selectedFile);
+  
+      // Save the file to the state if needed
+      setProduct({
+        ...product,
+        image: selectedFile,
+      });
     }
-    acceptedFiles
-  }, [])
+  }, [product]);
+  //   acceptedFiles
+  // }, [])
   const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop })
 
   const handleInputChange = (e) => {
     const {  value } = e.target;
-    console.log('product_name',value);
+ 
     
     setProduct({
       ...product,
@@ -61,7 +71,7 @@ function Add_product() {
       
       const formData = new FormData();
       formData.append('image', product.image);
-      formData.append('product_name', product.product_name);
+      formData.append('name', product.product_name);
       formData.append('quantity', product.quantity);
       formData.append('price', product.price);
   
@@ -71,6 +81,7 @@ function Add_product() {
         body: formData,
       });
   
+      console.log('API Response:', response);
      
       if (response.ok) {
        
@@ -84,6 +95,7 @@ function Add_product() {
       } else {
        
         const data = await response.json();
+        console.error('Error response body:', data);
         toast.error(`Error: ${data.message}`);
       }
     } catch (error) {
@@ -152,7 +164,7 @@ function Add_product() {
           value={product.price}
           onChange={handlepriceChange}
         />
-         {error.quantity && <span className="add-product-error">{error.price}</span>}
+         {error.price && <span className="add-product-error">{error.price}</span>}
       </div>
       <div className='btns'>
         <button onClick={handleCancel} className='btn-cancel'>Cancel</button>
