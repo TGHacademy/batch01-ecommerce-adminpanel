@@ -20,7 +20,7 @@ function product_list() {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const apiUrl = `https://academy-batch-1-project-683989f58497.herokuapp.com/api/admin/products`;
+        const apiUrl = 'https://academy-batch-1-project-683989f58497.herokuapp.com/api/admin/products/search';
         const response = await fetch(apiUrl);
 
         if (!response.ok) {
@@ -52,10 +52,11 @@ function product_list() {
   
       const searchData = await searchResponse.json();
   
+      // Check if searchData is an array
       if (Array.isArray(searchData)) {
         setProducts(searchData);
       } else {
-      
+        // Handle the case when searchData is not an array (e.g., setProducts([]))
         setProducts([]);
       }
     } catch (error) {
@@ -84,8 +85,8 @@ function product_list() {
       const data = await response.json();
       console.log('Product deleted successfully', data);
 
-    
-      const fetchApiUrl = `https://academy-batch-1-project-683989f58497.herokuapp.com/api/admin/products`;
+      // Refetch products after deletion
+      const fetchApiUrl = 'https://academy-batch-1-project-683989f58497.herokuapp.com/api/admin/products/search';
       const fetchResponse = await fetch(fetchApiUrl);
 
       if (!fetchResponse.ok) {
