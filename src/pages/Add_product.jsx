@@ -5,6 +5,7 @@ import { useDropzone } from 'react-dropzone';
 import toast from 'react-hot-toast';
 import { FaAngleLeft } from "react-icons/fa";
 import { MdFileUpload } from "react-icons/md";
+import { useHistory } from 'react-router-dom'; 
 
 function Add_product() {
   const [product, setProduct] = useState({
@@ -13,6 +14,13 @@ function Add_product() {
     quantity: '',
     price: '',
   });
+  const history = useHistory();
+
+  const handleBack = () => {
+    
+    history.push('/product-list');
+  };
+
   const [error, setError] = useState({ quantity: '', price: '' });
   const onDrop = useCallback(acceptedFiles => {
     if(acceptedFiles.length>1)
@@ -22,15 +30,14 @@ function Add_product() {
       const selectedFile = acceptedFiles[0];
       console.log('Selected File:', selectedFile);
   
-      // Save the file to the state if needed
+     
       setProduct({
         ...product,
         image: selectedFile,
       });
     }
   }, [product]);
-  //   acceptedFiles
-  // }, [])
+ 
   const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop })
 
   const handleInputChange = (e) => {
@@ -117,7 +124,7 @@ function Add_product() {
   return (
     <div className='addproduct'>
       <div  className='heading'>
-      <FaAngleLeft  className='back-btn'/>
+      <FaAngleLeft  className='back-btn' onClick={handleBack} />
         <h2 className='addproduct-h2'>Add New Product</h2>
       </div>
       <label className='image-label'>Image</label>

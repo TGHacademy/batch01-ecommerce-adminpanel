@@ -1,21 +1,103 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react'
+import { useState,useEffect } from 'react';
 import { FaRegBell } from "react-icons/fa";
 import { LuPencil,LuTrash } from "react-icons/lu";
 import { IoSearch } from "react-icons/io5";
+import { useHistory } from 'react-router-dom';
+
 
 function product_list() {
-  const products = [
-    { id: 1, image: 'src/assets/image 54.jpg',name: 'MSI CREATOR 17 A10SFS-240AU 17 UHD 4K HDR Thin Bezel Intel 10th Gen i7 10875H - RTX 2070 SUPER MAX Q - 16GB RAM - 1TB SSD NVME - Windows 10 PRO Laptop',
-     price: '₹ 8200', quantity: '500', dateAdded: '22 Sep, 2023' },{ id: 2, image: 'src/assets/image 54.jpg',name: 'MSI CREATOR 17 A10SFS-240AU 17 UHD 4K HDR Thin Bezel Intel 10th Gen i7 10875H - RTX 2070 SUPER MAX Q - 16GB RAM - 1TB SSD NVME - Windows 10 PRO Laptop',
-     price: '₹ 8200', quantity: '500', dateAdded: '22 Sep, 2023' },{ id: 3, image: 'src/assets/image 54.jpg',name: 'MSI CREATOR 17 A10SFS-240AU 17 UHD 4K HDR Thin Bezel Intel 10th Gen i7 10875H - RTX 2070 SUPER MAX Q - 16GB RAM - 1TB SSD NVME - Windows 10 PRO Laptop',
-     price: '₹ 8200', quantity: '500', dateAdded: '22 Sep, 2023' },{ id: 4, image: 'src/assets/image 54.jpg',name: 'MSI CREATOR 17 A10SFS-240AU 17 UHD 4K HDR Thin Bezel Intel 10th Gen i7 10875H - RTX 2070 SUPER MAX Q - 16GB RAM - 1TB SSD NVME - Windows 10 PRO Laptop',
-     price: '₹ 8200', quantity: '500', dateAdded: '22 Sep, 2023' },{ id: 5, image: 'src/assets/image 54.jpg',name: 'MSI CREATOR 17 A10SFS-240AU 17 UHD 4K HDR Thin Bezel Intel 10th Gen i7 10875H - RTX 2070 SUPER MAX Q - 16GB RAM - 1TB SSD NVME - Windows 10 PRO Laptop',
-     price: '₹ 8200', quantity: '500', dateAdded: '22 Sep, 2023' },{ id: 6, image: 'src/assets/image 54.jpg',name: 'MSI CREATOR 17 A10SFS-240AU 17 UHD 4K HDR Thin Bezel Intel 10th Gen i7 10875H - RTX 2070 SUPER MAX Q - 16GB RAM - 1TB SSD NVME - Windows 10 PRO Laptop',
-     price: '₹ 8200', quantity: '500', dateAdded: '22 Sep, 2023' },{ id: 7, image: 'src/assets/image 54.jpg',name: 'MSI CREATOR 17 A10SFS-240AU 17 UHD 4K HDR Thin Bezel Intel 10th Gen i7 10875H - RTX 2070 SUPER MAX Q - 16GB RAM - 1TB SSD NVME - Windows 10 PRO Laptop',
-     price: '₹ 8200', quantity: '500', dateAdded: '22 Sep, 2023' }
+  
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  const history = useHistory();
+  // eslint-disable-next-line react-hooks/rules-of-hooks, no-unused-vars
+  const [products, setProducts] = useState([]);
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  const [searchTerm, setSearchTerm] = useState('');
+
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const apiUrl = `https://academy-batch-1-project-683989f58497.herokuapp.com/api/admin/products`;
+        const response = await fetch(apiUrl);
+
+        if (!response.ok) {
+          throw new Error(`Error fetching products: ${response.status}`);
+        }
+
+        const data = await response.json();
+        setProducts(data);
+      } catch (error) {
+        console.error('Error fetching products:', error);
+      }
+    };
+
+    fetchProducts();
+  }, []);
+
+  const handleSearchChange = (event) => {
+    setSearchTerm(event.target.value);
+  };
+
+  const handleSearch = async () => {
+    try {
+      const searchApiUrl = `https://academy-batch-1-project-683989f58497.herokuapp.com/api/admin/products/search?q=${searchTerm}`;
+      const searchResponse = await fetch(searchApiUrl);
+  
+      if (!searchResponse.ok) {
+        throw new Error(`Error searching products: ${searchResponse.status}`);
+      }
+  
+      const searchData = await searchResponse.json();
+  
+      if (Array.isArray(searchData)) {
+        setProducts(searchData);
+      } else {
+      
+        setProducts([]);
+      }
+    } catch (error) {
+      console.error('Error searching products:', error);
+    }
+  };
+  
+
+  const handleAddProduct = () => {
+    history.push('/add-product');
+  };
+
+  const handleDeleteProduct = async (productId) => {
+    try {
+      const response = await fetch(`https://academy-batch-1-project-683989f58497.herokuapp.com/api/admin/products/${productId}`, {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+
+      if (!response.ok) {
+        throw new Error(`Error deleting product: ${response.status}`);
+      }
+
+      const data = await response.json();
+      console.log('Product deleted successfully', data);
+
     
-  ];
+      const fetchApiUrl = `https://academy-batch-1-project-683989f58497.herokuapp.com/api/admin/products`;
+      const fetchResponse = await fetch(fetchApiUrl);
+
+      if (!fetchResponse.ok) {
+        throw new Error(`Error fetching products: ${fetchResponse.status}`);
+      }
+
+      const fetchData = await fetchResponse.json();
+      setProducts(fetchData);
+    } catch (error) {
+      console.error('Error deleting product:', error);
+    }
+  };
 
   return (
     <div className='product-list-page'>
@@ -45,12 +127,14 @@ function product_list() {
       <input
         className='search-bar'
         type="text"
+        value={searchTerm}
+        onChange={handleSearchChange}
         placeholder="Search among 1080 products"
       />
-      <IoSearch className='search-icon' />
+      <IoSearch className='search-icon' onClick={handleSearch}/>
     </div>
 
-    <button className='btn-add-product'>Add Product+ </button>
+    <button   onClick={handleAddProduct} className='btn-add-product'>Add Product+ </button>
     </div>
     <div className='product-listing-part'>
       <div className='properties'>
@@ -74,7 +158,7 @@ function product_list() {
             {/* Actions (Edit and Delete icons) */}
             <div className='actions'>
               <LuPencil className='edit-icon' />
-              <LuTrash className='delete-icon' />
+              <LuTrash className='delete-icon' onClick={() => handleDeleteProduct(product.id)}  />
             </div>
           </div>
         ))}

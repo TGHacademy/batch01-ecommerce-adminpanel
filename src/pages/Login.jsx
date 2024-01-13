@@ -3,6 +3,7 @@ import logo from "/src/assets/Logo.svg"
 import bgimage from "/src/assets/Frame 160.svg"
 import toast from 'react-hot-toast';
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
+import { useHistory } from 'react-router-dom';
 
 
 function Login() {
@@ -10,7 +11,7 @@ function Login() {
     const [usernameError, setUsernameError] = useState('');
     const [password, setPassword] = useState('');
     const [passwordError, setPasswordError] = useState('');
-
+    const history = useHistory();
 
     const handleUsernameChange = (e) => {
         setUsernameError('');
@@ -49,6 +50,7 @@ function Login() {
                 localStorage.setItem("Token", JSON.stringify(data.token))
                 console.log('Login successful!');
                 toast.success('Successfully Login!');
+                history.push('/product-list');
             } else {
                 console.error('Login failed');
                 toast.error(data.error);
