@@ -1,29 +1,26 @@
 // eslint-disable-next-line no-unused-vars
-import React from 'react'
-import { useState,useEffect } from 'react';
-import { FaRegBell } from "react-icons/fa";
-import { LuPencil,LuTrash } from "react-icons/lu";
-import { IoSearch } from "react-icons/io5";
+import React, { useState, useEffect } from 'react';
+import { FaRegBell } from 'react-icons/fa';
+import { LuPencil, LuTrash } from 'react-icons/lu';
+import { IoSearch } from 'react-icons/io5';
 import { useHistory } from 'react-router-dom';
-// eslint-disable-next-line no-unused-vars
 import Modal from 'react-modal';
 import Edit from './Edit';
 
-
+Modal.setAppElement('#root');
 
 function product_list() {
-  
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const history = useHistory();
-  // eslint-disable-next-line react-hooks/rules-of-hooks, no-unused-vars
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   const [products, setProducts] = useState([]);
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const [searchTerm, setSearchTerm] = useState('');
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);
   // eslint-disable-next-line react-hooks/rules-of-hooks
-  // eslint-disable-next-line no-unused-vars, react-hooks/rules-of-hooks
   const [selectedProductId, setSelectedProductId] = useState(null);
+
   // eslint-disable-next-line react-hooks/rules-of-hooks
   useEffect(() => {
     const fetchProducts = async () => {
@@ -36,7 +33,6 @@ function product_list() {
         }
 
         const data = await response.json();
-        console.log(data.data);
         setProducts(data.data);
       } catch (error) {
         console.error('Error fetching products:', error);
@@ -54,7 +50,7 @@ function product_list() {
     try {
       const searchApiUrl = `https://academy-batch-1-project-683989f58497.herokuapp.com/api/admin/products/search?q=${searchTerm}`;
       const searchResponse = await fetch(searchApiUrl);
-  
+
       if (!searchResponse.ok) {
         throw new Error(`Error searching products: ${searchResponse.status}`);
       }
@@ -62,20 +58,16 @@ function product_list() {
       console.error('Error searching products:', error);
     }
   };
-  
 
   const handleAddProduct = () => {
     history.push('/add-product');
   };
-  
- 
- 
+
   const handleEditProduct = (productId) => {
     setSelectedProductId(productId);
     setIsEditModalOpen(true);
   };
 
-  
   const handleDeleteProduct = async (productId) => {
     try {
       const response = await fetch(`https://academy-batch-1-project-683989f58497.herokuapp.com/api/admin/products/${productId}`, {
@@ -106,6 +98,7 @@ function product_list() {
       console.error('Error deleting product:', error);
     }
   };
+
   const handleCloseEditModal = () => {
     setIsEditModalOpen(false);
     setSelectedProductId(null);
@@ -169,6 +162,7 @@ function product_list() {
             
             {/* Actions (Edit and Delete icons) */}
             <div className='actions'>
+              
               <LuPencil className='edit-icon'  onClick={() => {
     console.log('Edit icon clicked for product:', product);
     handleEditProduct(product.id);
@@ -188,13 +182,9 @@ function product_list() {
   <div className="circle-button">&#62;</div> {/* Greater than symbol for going forward */}
 </div>
     {/* Add/Edit Modal */}
-    <Modal
-        isOpen={isEditModalOpen}
-        onRequestClose={handleCloseEditModal}
-        contentLabel="Edit Product Modal"
-      >
+    <Modal isOpen={isEditModalOpen} onRequestClose={handleCloseEditModal} contentLabel="Edit Product Modal">
         {/* Render your Edit component here with selectedProductId */}
-        {selectedProductId && <Edit productId={selectedProductId} />}
+        {selectedProductId && <Edit productId={selectedProductId} onClose={handleCloseEditModal} />}
       </Modal>
     </div>
   )
