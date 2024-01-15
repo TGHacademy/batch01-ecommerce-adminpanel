@@ -12,6 +12,7 @@ import Add_product from './pages/Add_product'
 
 import { Toaster } from 'react-hot-toast'
 import product_list from './pages/product_list'
+import Edit from './pages/Edit'
 
 
 
@@ -25,6 +26,7 @@ function App() {
          <Route exact path='/reset-password' component={Reset}/>
          <Route exact path='/add-product' component={Add_product}/>
          <Route exact path='/product-list' component={product_list}/>
+         <Route exact path="/edit/:productId"  component={Edit}/>
          <Route path="/reset-password?token=" exact>
   <Reset />
 </Route>

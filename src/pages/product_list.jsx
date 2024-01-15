@@ -5,6 +5,10 @@ import { FaRegBell } from "react-icons/fa";
 import { LuPencil,LuTrash } from "react-icons/lu";
 import { IoSearch } from "react-icons/io5";
 import { useHistory } from 'react-router-dom';
+// eslint-disable-next-line no-unused-vars
+import Modal from 'react-modal';
+import Edit from './Edit';
+
 
 
 function product_list() {
@@ -15,7 +19,11 @@ function product_list() {
   const [products, setProducts] = useState([]);
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const [searchTerm, setSearchTerm] = useState('');
-
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  const [isEditModalOpen, setIsEditModalOpen] = useState(false);
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  // eslint-disable-next-line no-unused-vars, react-hooks/rules-of-hooks
+  const [selectedProductId, setSelectedProductId] = useState(null);
   // eslint-disable-next-line react-hooks/rules-of-hooks
   useEffect(() => {
     const fetchProducts = async () => {
@@ -28,7 +36,8 @@ function product_list() {
         }
 
         const data = await response.json();
-        setProducts(data);
+        console.log(data.data);
+        setProducts(data.data);
       } catch (error) {
         console.error('Error fetching products:', error);
       }
@@ -49,16 +58,6 @@ function product_list() {
       if (!searchResponse.ok) {
         throw new Error(`Error searching products: ${searchResponse.status}`);
       }
-  
-      const searchData = await searchResponse.json();
-  
-      // Check if searchData is an array
-      if (Array.isArray(searchData)) {
-        setProducts(searchData);
-      } else {
-        // Handle the case when searchData is not an array (e.g., setProducts([]))
-        setProducts([]);
-      }
     } catch (error) {
       console.error('Error searching products:', error);
     }
@@ -68,7 +67,15 @@ function product_list() {
   const handleAddProduct = () => {
     history.push('/add-product');
   };
+  
+ 
+ 
+  const handleEditProduct = (productId) => {
+    setSelectedProductId(productId);
+    setIsEditModalOpen(true);
+  };
 
+  
   const handleDeleteProduct = async (productId) => {
     try {
       const response = await fetch(`https://academy-batch-1-project-683989f58497.herokuapp.com/api/admin/products/${productId}`, {
@@ -99,7 +106,10 @@ function product_list() {
       console.error('Error deleting product:', error);
     }
   };
-
+  const handleCloseEditModal = () => {
+    setIsEditModalOpen(false);
+    setSelectedProductId(null);
+  };
   return (
     <div className='product-list-page'>
       <div className="navbar">
@@ -143,10 +153,11 @@ function product_list() {
      <h6>Product Name</h6>
      <h6>Price</h6>
      <h6>Quantity</h6>
-     <h6>Date added</h6>
+     
      <h6> </h6>
      </div>
-     {products.map((product) => (
+     {
+     products?.map((product) => (
           <div key={product.id} className='product'>
             {/* Display product information */}
             {/* Add your product image, name, price, quantity, and date added as needed */}
@@ -154,11 +165,14 @@ function product_list() {
             <p className='product-name'>{product.name}</p>
             <p className='price'>{product.price}</p>
             <p className='quantity'>{product.quantity}</p>
-            <p className='date'>{product.dateAdded}</p>
+           
             
             {/* Actions (Edit and Delete icons) */}
             <div className='actions'>
-              <LuPencil className='edit-icon' />
+              <LuPencil className='edit-icon'  onClick={() => {
+    console.log('Edit icon clicked for product:', product);
+    handleEditProduct(product.id);
+  }}/>
               <LuTrash className='delete-icon' onClick={() => handleDeleteProduct(product.id)}  />
             </div>
           </div>
@@ -173,6 +187,15 @@ function product_list() {
   ))}
   <div className="circle-button">&#62;</div> {/* Greater than symbol for going forward */}
 </div>
+    {/* Add/Edit Modal */}
+    <Modal
+        isOpen={isEditModalOpen}
+        onRequestClose={handleCloseEditModal}
+        contentLabel="Edit Product Modal"
+      >
+        {/* Render your Edit component here with selectedProductId */}
+        {selectedProductId && <Edit productId={selectedProductId} />}
+      </Modal>
     </div>
   )
 }

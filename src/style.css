@@ -581,7 +581,7 @@ form {
 
 .search-container {
   position: relative;
-  padding-left: 20px; 
+  padding-left: 20px;
 }
 
 .search-icon {
@@ -629,7 +629,7 @@ form {
 .properties {
   height: 55px;
   display: flex;
-  padding-left: 38px;
+  padding-left: 103px;
   align-items: center;
   gap: 120px;
   color: #5E5E5E;
@@ -639,16 +639,16 @@ form {
   font-weight: 800;
   line-height: normal;
   border-bottom: 1px solid #E1E1E1;
-  box-sizing: border-box; 
+  box-sizing: border-box;
   width: 100%;
 }
 
 .product {
   display: flex;
   height: 86px;
-  padding: 8px 20px;
+  padding-left: 93px;
   align-items: center;
-  gap: 25px;
+  gap: 21px;
   border-bottom: 1px solid #ccc;
   box-sizing: border-box;
   width: 100%;
@@ -656,11 +656,17 @@ form {
 
 .actions {
   display: flex;
-  gap: 10px;
+  gap: 35px;
+  padding-left: 38px;
+}
+
+.product-image {
+  width: 77px;
+  height: 77px;
 }
 
 .product-name {
-  width:170.5px;
+  width: 170.5px;
   height: 27px;
   padding-left: 111px;
   padding-right: 20px;
@@ -692,15 +698,7 @@ form {
   line-height: normal;
 }
 
-.date {
-  width: 200px;
-  color: #171717;
-  font-family: Manrope;
-  font-size: 12px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-}
+
 
 .scroll-buttons {
   display: flex;
@@ -725,4 +723,53 @@ form {
   color: #000;
   background: #F5F7FF;
 
+}/* EditProduct.css */
+
+.edit-product-page {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  font-family: Poppins;
+  background-color: #fff;
+}
+
+.edit-h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.edit-form{
+  display: flex;
+  flex-direction: column;
+}
+
+.edit-label {
+  margin-bottom: 10px;
+}
+
+.edit-input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 4px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.edit-button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 16px;
+  font-family: Poppins;
+  margin-top: 10px;
+}
+
+.edit-button:hover {
+  background-color: #0056b3;
 }
