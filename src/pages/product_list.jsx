@@ -7,21 +7,20 @@ import { useHistory } from 'react-router-dom';
 import Modal from 'react-modal';
 import Edit from './Edit';
 
-Modal.setAppElement('#root');
 
-function product_list() {
-  // eslint-disable-next-line react-hooks/rules-of-hooks
+
+function ProductList() {
+ 
   const history = useHistory();
-  // eslint-disable-next-line react-hooks/rules-of-hooks
+
   const [products, setProducts] = useState([]);
-  // eslint-disable-next-line react-hooks/rules-of-hooks
+  
   const [searchTerm, setSearchTerm] = useState('');
-  // eslint-disable-next-line react-hooks/rules-of-hooks
+ 
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);
-  // eslint-disable-next-line react-hooks/rules-of-hooks
+  
   const [selectedProductId, setSelectedProductId] = useState(null);
 
-  // eslint-disable-next-line react-hooks/rules-of-hooks
   useEffect(() => {
     const fetchProducts = async () => {
       try {
@@ -34,6 +33,7 @@ function product_list() {
 
         const data = await response.json();
         setProducts(data.data);
+
       } catch (error) {
         console.error('Error fetching products:', error);
       }
@@ -151,7 +151,7 @@ function product_list() {
      </div>
      {
      products?.map((product) => (
-          <div key={product.id} className='product'>
+          <div key={product._id} className='product'>
             {/* Display product information */}
             {/* Add your product image, name, price, quantity, and date added as needed */}
             <img src={product.image}  className='product-image' />
@@ -165,9 +165,9 @@ function product_list() {
               
               <LuPencil className='edit-icon'  onClick={() => {
     console.log('Edit icon clicked for product:', product);
-    handleEditProduct(product.id);
+    handleEditProduct(product._id);
   }}/>
-              <LuTrash className='delete-icon' onClick={() => handleDeleteProduct(product.id)}  />
+              <LuTrash className='delete-icon' onClick={() => handleDeleteProduct(product._id)}  />
             </div>
           </div>
         ))}
@@ -184,10 +184,10 @@ function product_list() {
     {/* Add/Edit Modal */}
     <Modal isOpen={isEditModalOpen} onRequestClose={handleCloseEditModal} contentLabel="Edit Product Modal">
         {/* Render your Edit component here with selectedProductId */}
-        {selectedProductId && <Edit productId={selectedProductId} onClose={handleCloseEditModal} />}
+        { <Edit productId={selectedProductId} onClose={handleCloseEditModal} />}
       </Modal>
     </div>
   )
 }
 
-export default product_list
+export default ProductList

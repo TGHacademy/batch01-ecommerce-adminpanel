@@ -10,32 +10,33 @@ function Edit({ productId, onClose }) {
     price: 0,
   });
 
-  useEffect(() => {
-    const fetchProduct = async () => {
-      try {
-        const apiUrl = `https://academy-batch-1-project-683989f58497.herokuapp.com/api/admin/products/${productId}`;
-        const response = await fetch(apiUrl);
+  // useEffect(() => {
+  //   const fetchProduct = async () => {
+  //     try {
+  //       const apiUrl = `https://academy-batch-1-project-683989f58497.herokuapp.com/api/admin/products/${productId}`;
+  //       const response = await fetch(apiUrl);
 
-        if (!response.ok) {
-          throw new Error(`Error fetching product: ${response.status}`);
-        }
+  //       if (!response.ok) {
+  //         throw new Error(`Error fetching product: ${response.status}`);
+  //       }
 
-        const data = await response.json();
+  //       const data = await response.json();
 
-        // Set the form data with the retrieved product details
-        setFormData({
-          image: data.data.image,
-          name: data.data.name,
-          quantity: data.data.quantity,
-          price: data.data.price,
-        });
-      } catch (error) {
-        console.error('Error fetching product:', error);
-      }
-    };
+  //       // Set the form data with the retrieved product details
+  //       setFormData({
 
-    fetchProduct();
-  }, [productId]);
+  //         image: data.data.image,
+  //         name: data.data.name,
+  //         quantity: data.data.quantity,
+  //         price: data.data.price,
+  //       });
+  //     } catch (error) {
+  //       console.error('Error fetching product:', error);
+  //     }
+  //   };
+
+  //   fetchProduct();
+  // }, [productId]);
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
