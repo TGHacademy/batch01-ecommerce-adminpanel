@@ -7,7 +7,7 @@ import { FaAngleLeft } from "react-icons/fa";
 import { MdFileUpload } from "react-icons/md";
 import { useHistory } from 'react-router-dom'; 
 
-function Add_product() {
+function AddProduct() {
   const [product, setProduct] = useState({
     image: null,
     product_name: '',
@@ -181,4 +181,4 @@ function Add_product() {
   );
 }
 
-export default Add_product;
+export default AddProduct;

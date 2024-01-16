@@ -152,8 +152,6 @@ function ProductList() {
      {
      products?.map((product) => (
           <div key={product._id} className='product'>
-            {/* Display product information */}
-            {/* Add your product image, name, price, quantity, and date added as needed */}
             <img src={product.image}  className='product-image' />
             <p className='product-name'>{product.name}</p>
             <p className='price'>{product.price}</p>
@@ -173,13 +171,13 @@ function ProductList() {
         ))}
     </div>
     <div className="scroll-buttons">
-  <div className="circle-button">&#60;</div> {/* Less than symbol for going back */}
+  <div className="circle-button">&#60;</div>
   {[1, 2, 3, "...", 15].map((item, index) => (
     <div key={index} className="circle-button">
       {item}
     </div>
   ))}
-  <div className="circle-button">&#62;</div> {/* Greater than symbol for going forward */}
+  <div className="circle-button">&#62;</div> 
 </div>
     {/* Add/Edit Modal */}
     <Modal isOpen={isEditModalOpen} onRequestClose={handleCloseEditModal} contentLabel="Edit Product Modal">

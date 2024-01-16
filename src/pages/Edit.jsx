@@ -1,5 +1,5 @@
 // eslint-disable-next-line no-unused-vars
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 // eslint-disable-next-line react/prop-types
 function Edit({ productId, onClose }) {
@@ -64,7 +64,7 @@ function Edit({ productId, onClose }) {
       const data = await response.json();
       console.log('Product updated successfully', data);
 
-      // Optionally, you can perform actions like closing the modal or updating the product list
+      
       onClose();
     } catch (error) {
       console.error('Error updating product:', error);

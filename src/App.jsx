@@ -8,10 +8,10 @@ import {BrowserRouter as Router,
   from 'react-router-dom'
 import Forgot from './pages/Forgot'
 import Reset from './pages/Reset'
-import Add_product from './pages/Add_product'
+import AddProduct from './pages/Add_product'
 
 import { Toaster } from 'react-hot-toast'
-import product_list from './pages/product_list'
+import ProductList from './pages/product_list'
 import Edit from './pages/Edit'
 
 
@@ -26,8 +26,8 @@ function App() {
          <Route exact path='/' component ={Login}/>
          <Route exact path='/forgot' component={Forgot}/>  
          <Route exact path='/reset-password' component={Reset}/>
-         <Route exact path='/add-product' component={Add_product}/>
-         <Route exact path='/product-list' component={product_list}/>
+         <Route exact path='/add-product' component={AddProduct}/>
+         <Route exact path='/product-list' component={ProductList}/>
          <Route exact path='/edit/:productId' component={Edit}/>
          <Route path="/reset-password?token=" exact>
   <Reset />
